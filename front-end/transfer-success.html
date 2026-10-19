@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Jasima Bank - Transfer Successful</title>
+
+    <link rel="stylesheet" href="./css/styles.css">
+</head>
+
+<body>
+
+<header class="top-header">
+
+    <div class="logo">
+
+        <span class="logo-name">
+            jasima
+        </span>
+
+        <span class="logo-bank">
+            ◆ Jasima Bank
+        </span>
+
+    </div>
+
+    <div class="top-actions">
+
+        <span id="welcomeUser">
+            Welcome
+        </span>
+
+        <button
+            id="logoutButton"
+            class="logout-btn">
+
+            Logout
+
+        </button>
+
+    </div>
+
+</header>
+
+
+<main class="transfer-page">
+
+    <div class="breadcrumb">
+
+        <span>Dashboard</span>
+
+        <span>›</span>
+
+        <span>Pay & Transfer</span>
+
+        <span>›</span>
+
+        <strong>Transfer Complete</strong>
+
+    </div>
+
+
+    <div class="success-card">
+
+        <div class="success-icon">
+            ✓
+        </div>
+
+        <h1>
+            Transfer Successful
+        </h1>
+
+        <p class="success-description">
+
+            Your money transfer has been completed successfully.
+
+        </p>
+
+
+        <!-- AMOUNT -->
+
+        <div class="success-amount">
+
+            <span>
+                Amount Transferred
+            </span>
+
+            <strong id="successAmount">
+                AED 0.00
+            </strong>
+
+        </div>
+
+
+        <!-- DETAILS -->
+
+        <div class="success-details">
+
+            <div class="success-row">
+
+                <span>
+                    Beneficiary
+                </span>
+
+                <strong id="successBeneficiary">
+                    -
+                </strong>
+
+            </div>
+
+
+            <div class="success-row">
+
+                <span>
+                    Bank
+                </span>
+
+                <strong id="successBank">
+                    -
+                </strong>
+
+            </div>
+
+
+            <div class="success-row">
+
+                <span>
+                    Reference Number
+                </span>
+
+                <strong id="successReference">
+                    -
+                </strong>
+
+            </div>
+
+
+            <div class="success-row">
+
+                <span>
+                    Status
+                </span>
+
+                <strong class="success-status">
+                    SUCCESS
+                </strong>
+
+            </div>
+
+        </div>
+
+
+        <!-- ACTIONS -->
+
+        <div class="success-actions">
+
+            <button
+                type="button"
+                id="viewTransactions"
+                class="secondary-btn">
+
+                View Transaction History
+
+            </button>
+
+
+            <button
+                type="button"
+                id="backDashboard"
+                class="primary-btn">
+
+                Back to Dashboard
+
+            </button>
+
+        </div>
+
+
+        <button
+            type="button"
+            id="makeAnotherTransfer"
+            class="link-btn success-link">
+
+            Make Another Transfer
+
+        </button>
+
+    </div>
+
+
+    <section class="security-box">
+
+        <div class="security-icon">
+            🔒
+        </div>
+
+        <div>
+
+            <strong>
+                Transfer Completed Securely
+            </strong>
+
+            <p>
+
+                Please keep your reference number
+                for future enquiries.
+
+            </p>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<footer class="footer">
+
+    <div>
+        © Jasima Bank 2026. All rights reserved.
+    </div>
+
+    <div class="footer-links">
+
+        <span>Security</span>
+
+        <span>|</span>
+
+        <span>Privacy Policy</span>
+
+        <span>|</span>
+
+        <span>Service Terms</span>
+
+    </div>
+
+</footer>
+
+
+<script src="./js/transfer-success.js"></script>
+
+</body>
+
+</html>

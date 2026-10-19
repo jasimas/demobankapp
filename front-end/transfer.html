@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Jasima Bank - Pay & Transfer</title>
+
+    <link rel="stylesheet" href="./css/styles.css">
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header class="top-header">
+
+        <div class="logo">
+
+            <span class="logo-name">
+                jasima
+            </span>
+
+            <span class="logo-bank">
+                ◆ Jasima Bank
+            </span>
+
+        </div>
+
+        <div class="top-actions">
+
+            <span id="welcomeUser">
+                Welcome
+            </span>
+
+            <button
+                id="logoutButton"
+                class="logout-btn">
+                Logout
+            </button>
+
+        </div>
+
+    </header>
+
+
+    <!-- MAIN -->
+    <main class="transfer-page">
+
+        <!-- BREADCRUMB -->
+        <div class="breadcrumb">
+
+            <span>Dashboard</span>
+
+            <span>›</span>
+
+            <span>Pay & Transfer</span>
+
+            <span>›</span>
+
+            <strong>Send Money</strong>
+
+        </div>
+
+
+        <!-- PAGE TITLE -->
+        <div class="transfer-heading">
+
+            <div>
+
+                <h1>Send Money</h1>
+
+                <p>
+                    Transfer money securely to your beneficiary
+                </p>
+
+            </div>
+
+            <button
+                id="backDashboard"
+                class="secondary-btn">
+
+                ← Dashboard
+
+            </button>
+
+        </div>
+
+
+        <!-- PROGRESS -->
+        <div class="transfer-progress">
+
+            <div class="progress-step active">
+
+                <span class="step-number">1</span>
+
+                <span>Send Money</span>
+
+            </div>
+
+
+            <div class="progress-line"></div>
+
+
+            <div class="progress-step">
+
+                <span class="step-number">2</span>
+
+                <span>Review</span>
+
+            </div>
+
+
+            <div class="progress-line"></div>
+
+
+            <div class="progress-step">
+
+                <span class="step-number">3</span>
+
+                <span>Authentication</span>
+
+            </div>
+
+
+            <div class="progress-line"></div>
+
+
+            <div class="progress-step">
+
+                <span class="step-number">4</span>
+
+                <span>Complete</span>
+
+            </div>
+
+        </div>
+
+
+        <!-- TRANSFER CARD -->
+        <section class="transfer-card">
+
+            <div class="transfer-card-header">
+
+                <h2>Transfer Details</h2>
+
+                <p>
+                    Enter the details of your transfer
+                </p>
+
+            </div>
+
+
+            <form id="transferForm">
+
+
+                <!-- FROM ACCOUNT -->
+                <div class="transfer-field">
+
+                    <label for="accountId">
+                        From Account
+                        <span class="required">*</span>
+                    </label>
+
+                    <select
+                        id="accountId"
+                        name="accountId"
+                        required>
+
+                        <option value="">
+                            Select account
+                        </option>
+
+                    </select>
+
+                    <small
+                        id="accountBalance"
+                        class="field-help">
+                    </small>
+
+                </div>
+
+
+                <!-- BENEFICIARY -->
+                <div class="transfer-field">
+
+                    <label for="beneficiaryId">
+                        To Beneficiary
+                        <span class="required">*</span>
+                    </label>
+
+                    <select
+                        id="beneficiaryId"
+                        name="beneficiaryId"
+                        required>
+
+                        <option value="">
+                            Select beneficiary
+                        </option>
+
+                    </select>
+
+                    <small
+                        id="beneficiaryDetails"
+                        class="field-help">
+                    </small>
+
+                </div>
+
+
+                <!-- AMOUNT -->
+                <div class="transfer-field">
+
+                    <label for="amount">
+                        Amount
+                        <span class="required">*</span>
+                    </label>
+
+                    <div class="amount-input">
+
+                        <span>AED</span>
+
+                        <input
+                            type="number"
+                            id="amount"
+                            name="amount"
+                            min="0.01"
+                            step="0.01"
+                            placeholder="0.00"
+                            required>
+
+                    </div>
+
+                    <small class="field-help">
+
+                        Available balance:
+
+                        <strong id="availableBalance">
+                            AED 0.00
+                        </strong>
+
+                    </small>
+
+                </div>
+
+
+                <!-- PURPOSE -->
+                <div class="transfer-field">
+
+                    <label for="purpose">
+                        Purpose of Transfer
+                    </label>
+
+                    <select
+                        id="purpose"
+                        name="purpose">
+
+                        <option value="">
+                            Select purpose
+                        </option>
+
+                        <option value="Family Support">
+                            Family Support
+                        </option>
+
+                        <option value="Bill Payment">
+                            Bill Payment
+                        </option>
+
+                        <option value="Education">
+                            Education
+                        </option>
+
+                        <option value="Rent">
+                            Rent
+                        </option>
+
+                        <option value="Personal">
+                            Personal
+                        </option>
+
+                        <option value="Other">
+                            Other
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <!-- MESSAGE -->
+                <div
+                    id="transferMessage"
+                    class="form-message">
+                </div>
+
+
+                <!-- BUTTONS -->
+                <div class="transfer-actions">
+
+                    <button
+                        type="button"
+                        id="cancelTransfer"
+                        class="secondary-btn">
+
+                        Cancel
+
+                    </button>
+
+
+                    <button
+                        type="submit"
+                        id="continueTransfer"
+                        class="primary-btn">
+
+                        Continue
+
+                    </button>
+
+                </div>
+
+            </form>
+
+        </section>
+
+
+        <!-- SECURITY -->
+        <section class="security-box">
+
+            <div class="security-icon">
+                🔒
+            </div>
+
+            <div>
+
+                <strong>
+                    Secure Transfer
+                </strong>
+
+                <p>
+                    Your transfer is protected by
+                    authentication. You will be asked
+                    to verify the transaction before
+                    it is completed.
+                </p>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- FOOTER -->
+    <footer class="footer">
+
+        <div>
+            © Jasima Bank 2026. All rights reserved.
+        </div>
+
+        <div class="footer-links">
+
+            <span>Security</span>
+
+            <span>|</span>
+
+            <span>Privacy Policy</span>
+
+            <span>|</span>
+
+            <span>Service Terms</span>
+
+        </div>
+
+    </footer>
+
+
+    <!-- IMPORTANT -->
+    <script src="./js/transfer.js"></script> 
+</body>
+
+</html>

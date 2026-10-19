@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Jasima Bank - Transactions</title>
+
+    <link rel="stylesheet"
+          href="./css/styles.css">
+
+</head>
+
+<body>
+
+<header class="top-header">
+
+    <div class="logo">
+
+        <span class="logo-name">
+            jasima
+        </span>
+
+        <span class="logo-bank">
+            ◆ Jasima Bank
+        </span>
+
+    </div>
+
+
+    <div class="top-actions">
+
+        <span id="welcomeUser">
+            Welcome
+        </span>
+
+        <button
+            id="logoutButton"
+            class="logout-btn"
+            type="button">
+
+            Logout
+
+        </button>
+
+    </div>
+
+</header>
+
+
+<main class="transactions-page">
+
+
+    <!-- =====================================================
+         BREADCRUMB
+         ===================================================== -->
+
+    <div class="breadcrumb">
+
+        <a
+            href="./Dashboard.html"
+            class="dashboard-link">
+
+            Dashboard
+
+        </a>
+
+        <span>›</span>
+
+        <strong>
+            Transactions
+        </strong>
+
+    </div>
+
+
+    <!-- =====================================================
+         HEADING
+         ===================================================== -->
+
+    <div class="transactions-heading">
+
+        <div>
+
+            <h1>
+                Transaction History
+            </h1>
+
+            <p>
+                View and manage your recent transactions
+            </p>
+
+        </div>
+
+
+        <!-- DASHBOARD NAVIGATION -->
+
+        <a
+            href="./Dashboard.html"
+            class="btn btn-outline">
+
+            ← Dashboard
+
+        </a>
+
+    </div>
+
+
+    <!-- =====================================================
+         FILTER SECTION
+         ===================================================== -->
+
+    <section class="transaction-filter">
+
+
+        <div class="filter-item">
+
+            <label for="statusFilter">
+                Status
+            </label>
+
+            <select id="statusFilter">
+
+                <option value="">
+                    All Transactions
+                </option>
+
+                <option value="SUCCESS">
+                    Success
+                </option>
+
+                <option value="PENDING">
+                    Pending
+                </option>
+
+                <option value="FAILED">
+                    Failed
+                </option>
+
+            </select>
+
+        </div>
+
+
+        <div class="filter-item">
+
+            <label for="referenceFilter">
+                Reference Number
+            </label>
+
+            <input
+                type="text"
+                id="referenceFilter"
+                placeholder="Enter reference number">
+
+        </div>
+
+
+        <button
+            id="filterButton"
+            class="primary-btn"
+            type="button">
+
+            Search
+
+        </button>
+
+
+        <button
+            id="clearFilter"
+            class="secondary-btn"
+            type="button">
+
+            Clear
+
+        </button>
+
+
+    </section>
+
+
+    <!-- =====================================================
+         TRANSACTION TABLE
+         ===================================================== -->
+
+    <section class="transactions-card">
+
+
+        <div class="transactions-card-header">
+
+            <div>
+
+                <h2>
+                    Recent Transactions
+                </h2>
+
+                <span id="transactionCount">
+                    Loading...
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <div class="transaction-table-wrapper">
+
+            <table class="transaction-table">
+
+                <thead>
+
+                    <tr>
+
+                        <th>
+                            Date
+                        </th>
+
+                        <th>
+                            Reference
+                        </th>
+
+                        <th>
+                            Beneficiary
+                        </th>
+
+                        <th>
+                            Bank
+                        </th>
+
+                        <th>
+                            Amount
+                        </th>
+
+                        <th>
+                            Purpose
+                        </th>
+
+                        <th>
+                            Status
+                        </th>
+
+                    </tr>
+
+                </thead>
+
+
+                <tbody id="transactionTableBody">
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+
+        <!-- EMPTY MESSAGE -->
+
+        <div
+            id="emptyMessage"
+            class="empty-message"
+            style="display: none;">
+
+            No transactions found.
+
+        </div>
+
+
+        <!-- ERROR MESSAGE -->
+
+        <div
+            id="errorMessage"
+            class="transaction-error"
+            style="display: none;">
+
+        </div>
+
+
+    </section>
+
+
+</main>
+
+
+<!-- =====================================================
+     FOOTER
+     ===================================================== -->
+
+<footer class="footer">
+
+    <div>
+        © Jasima Bank 2026. All rights reserved.
+    </div>
+
+
+    <div class="footer-links">
+
+        <span>
+            Security
+        </span>
+
+        <span>
+            |
+        </span>
+
+        <span>
+            Privacy Policy
+        </span>
+
+        <span>
+            |
+        </span>
+
+        <span>
+            Service Terms
+        </span>
+
+    </div>
+
+</footer>
+
+
+<script src="./js/transactions.js"></script>
+
+</body>
+
+</html>

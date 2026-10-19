@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Jasima Bank - Authentication</title>
+
+    <link rel="stylesheet" href="./css/styles.css">
+
+</head>
+
+<body>
+
+<header class="top-header">
+
+    <div class="logo">
+
+        <span class="logo-name">
+            jasima
+        </span>
+
+        <span class="logo-bank">
+            ◆ Jasima Bank
+        </span>
+
+    </div>
+
+    <div class="top-actions">
+
+        <span id="welcomeUser">
+            Welcome
+        </span>
+
+        <button
+            id="logoutButton"
+            class="logout-btn">
+
+            Logout
+
+        </button>
+
+    </div>
+
+</header>
+
+
+<main class="transfer-page">
+
+    <div class="breadcrumb">
+
+        <span>Dashboard</span>
+
+        <span>›</span>
+
+        <span>Pay & Transfer</span>
+
+        <span>›</span>
+
+        <span>Send Money</span>
+
+        <span>›</span>
+
+        <strong>Authentication</strong>
+
+    </div>
+
+
+    <div class="transfer-heading">
+
+        <div>
+
+            <h1>
+                Authenticate Transfer
+            </h1>
+
+            <p>
+                Verify your identity to complete this transfer
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <!-- PROGRESS -->
+
+    <div class="transfer-progress">
+
+        <div class="progress-step">
+
+            <span class="step-number">
+                ✓
+            </span>
+
+            <span>
+                Send Money
+            </span>
+
+        </div>
+
+        <div class="progress-line"></div>
+
+        <div class="progress-step">
+
+            <span class="step-number">
+                ✓
+            </span>
+
+            <span>
+                Review
+            </span>
+
+        </div>
+
+        <div class="progress-line"></div>
+
+        <div class="progress-step active">
+
+            <span class="step-number">
+                3
+            </span>
+
+            <span>
+                Authentication
+            </span>
+
+        </div>
+
+        <div class="progress-line"></div>
+
+        <div class="progress-step">
+
+            <span class="step-number">
+                4
+            </span>
+
+            <span>
+                Complete
+            </span>
+
+        </div>
+
+    </div>
+
+
+    <!-- AUTH CARD -->
+
+    <section class="authentication-card">
+
+        <div class="authentication-icon">
+            🔐
+        </div>
+
+        <h2>
+            Verify Your Transfer
+        </h2>
+
+        <p class="authentication-description">
+
+            We have sent a one-time password (OTP)
+            to your registered mobile number.
+
+        </p>
+
+
+        <!-- TRANSFER SUMMARY -->
+
+        <div class="auth-transfer-summary">
+
+            <div>
+
+                <span>
+                    Transfer Amount
+                </span>
+
+                <strong id="authAmount">
+                    AED 0.00
+                </strong>
+
+            </div>
+
+
+            <div>
+
+                <span>
+                    Beneficiary
+                </span>
+
+                <strong id="authBeneficiary">
+                    -
+                </strong>
+
+            </div>
+
+        </div>
+
+
+        <!-- OTP -->
+
+        <div class="otp-field">
+
+            <label for="otp">
+
+                Enter OTP
+
+            </label>
+
+            <input
+                type="text"
+                id="otp"
+                name="otp"
+                maxlength="6"
+                inputmode="numeric"
+                autocomplete="one-time-code"
+                placeholder="Enter 6-digit OTP">
+
+            <small>
+
+                For practice, use OTP:
+                <strong>123456</strong>
+
+            </small>
+
+        </div>
+
+
+        <!-- ATTEMPTS -->
+
+        <div
+            id="attemptMessage"
+            class="attempt-message">
+
+            Attempts remaining: 3
+
+        </div>
+
+
+        <!-- ERROR/SUCCESS -->
+
+        <div
+            id="authenticationMessage"
+            class="form-message">
+        </div>
+
+
+        <!-- BUTTONS -->
+
+        <div class="transfer-actions">
+
+            <button
+                type="button"
+                id="backToReview"
+                class="secondary-btn">
+
+                ← Back
+
+            </button>
+
+
+            <button
+                type="button"
+                id="verifyOtp"
+                class="primary-btn">
+
+                Verify & Complete
+
+            </button>
+
+        </div>
+
+
+        <!-- RESEND -->
+
+        <div class="resend-section">
+
+            <span>
+                Didn't receive the OTP?
+            </span>
+
+            <button
+                type="button"
+                id="resendOtp"
+                class="link-btn">
+
+                Resend OTP
+
+            </button>
+
+            <span
+                id="resendTimer">
+            </span>
+
+        </div>
+
+    </section>
+
+
+    <!-- SECURITY -->
+
+    <section class="security-box">
+
+        <div class="security-icon">
+            🔒
+        </div>
+
+        <div>
+
+            <strong>
+                Secure Authentication
+            </strong>
+
+            <p>
+
+                Never share your OTP with anyone.
+                Jasima Bank will never ask you to
+                share your authentication code.
+
+            </p>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<footer class="footer">
+
+    <div>
+        © Jasima Bank 2026. All rights reserved.
+    </div>
+
+    <div class="footer-links">
+
+        <span>Security</span>
+
+        <span>|</span>
+
+        <span>Privacy Policy</span>
+
+        <span>|</span>
+
+        <span>Service Terms</span>
+
+    </div>
+
+</footer>
+
+
+<script src="./js/transfer-authentication.js"></script>
+
+</body>
+
+</html>

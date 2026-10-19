@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Jasima Bank</title>
+
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header class="top-header">
+
+        <div class="brand">
+            jasima
+        </div>
+
+        <div id="top-actions">
+            <span id="loggedInUser"></span>
+
+            <button class="logout-btn" onclick="logout()">
+                Sign out
+            </button>
+        </div>
+
+    </header>
+
+
+    <!-- MAIN CONTENT -->
+    <main class="home-container">
+
+        <div class="welcome-card">
+
+            <h1>Welcome to Jasima Bank</h1>
+
+            <p>
+                Manage your accounts, beneficiaries and money transfers
+                securely from one place.
+            </p>
+
+            <div class="dashboard-buttons">
+
+                <a href="Dashboard.html" class="dashboard-btn">
+                    Go to Dashboard
+                </a>
+
+                <a href="manage-beneficiary.html" class="dashboard-btn">
+                    Manage Beneficiaries
+                </a>
+
+                <a href="transfer.html" class="dashboard-btn">
+                    Transfer Money
+                </a>
+
+                <a href="transactions.html" class="dashboard-btn">
+                    Transaction History
+                </a>
+
+            </div>
+
+        </div>
+
+    </main>
+
+
+    <!-- FOOTER -->
+    <footer class="footer">
+
+        <div>
+            © Jasima Bank 2026. All rights reserved.
+        </div>
+
+        <div class="footer-links">
+            <span>Requirements</span>
+            <span>|</span>
+            <span>Security</span>
+            <span>|</span>
+            <span>Privacy policy</span>
+            <span>|</span>
+            <span>Service Terms</span>
+        </div>
+
+    </footer>
+
+
+    <script>
+        const user = localStorage.getItem("user");
+
+        if (user) {
+
+            const userData = JSON.parse(user);
+
+            document.getElementById("loggedInUser").textContent =
+                userData.username || "jasima123";
+
+        } else {
+
+            document.getElementById("loggedInUser").textContent =
+                "jasima123";
+        }
+
+
+        function logout() {
+
+            localStorage.removeItem("user");
+
+            window.location.href = "login.html";
+        }
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Jasima Bank - Manage Beneficiary</title>
+
+    <link rel="stylesheet"
+          href="./css/styles.css">
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     HEADER
+===================================================== -->
+
+<header class="top-header">
+
+    <div class="logo">
+
+        <span class="logo-name">
+            jasima
+        </span>
+
+        <span class="logo-bank">
+            ◆ Jasima Bank
+        </span>
+
+    </div>
+
+
+    <div class="top-actions">
+
+        <span id="welcomeUser">
+            Welcome
+        </span>
+
+        <button
+            id="logoutButton"
+            class="logout-btn">
+
+            Logout
+
+        </button>
+
+    </div>
+
+</header>
+
+
+<!-- =====================================================
+     MAIN CONTENT
+===================================================== -->
+
+<main class="page-container">
+
+
+    <!-- PAGE TITLE -->
+
+    <div class="page-header">
+
+        <div>
+
+            <h1>
+                Manage Beneficiary
+            </h1>
+
+            <p>
+                Add, modify and manage your beneficiaries
+            </p>
+
+        </div>
+
+
+        <button
+            id="backDashboard"
+            class="secondary-btn">
+
+            ← Dashboard
+
+        </button>
+
+    </div>
+
+
+    <!-- =================================================
+         ADD BENEFICIARY CARD
+    ================================================== -->
+
+    <section class="card">
+
+
+        <div class="card-header">
+
+            <div>
+
+                <h2>
+                    Add Beneficiary
+                </h2>
+
+                <p>
+                    Enter the beneficiary details below
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <form id="beneficiaryForm">
+
+
+            <!-- BENEFICIARY NAME -->
+
+            <div class="form-grid">
+
+
+                <div class="field">
+
+                    <label for="beneficiaryName">
+
+                        Beneficiary Name
+                        <span class="required">*</span>
+
+                    </label>
+
+                    <input
+                        type="text"
+                        id="beneficiaryName"
+                        name="beneficiaryName"
+                        placeholder="Enter beneficiary name"
+                        maxlength="100"
+                        required>
+
+                </div>
+
+
+                <!-- NICKNAME -->
+
+                <div class="field">
+
+                    <label for="nickname">
+
+                        Nickname
+
+                    </label>
+
+                    <input
+                        type="text"
+                        id="nickname"
+                        name="nickname"
+                        placeholder="Enter nickname"
+                        maxlength="100">
+
+                </div>
+
+
+                <!-- BANK NAME -->
+
+                <div class="field">
+
+                    <label for="bankName">
+
+                        Bank Name
+                        <span class="required">*</span>
+
+                    </label>
+
+                    <input
+                        type="text"
+                        id="bankName"
+                        name="bankName"
+                        placeholder="Enter bank name"
+                        maxlength="150"
+                        required>
+
+                </div>
+
+
+                <!-- BANK COUNTRY -->
+
+                <div class="field">
+
+                    <label for="bankCountry">
+
+                        Bank Country
+                        <span class="required">*</span>
+
+                    </label>
+
+                    <select
+                        id="bankCountry"
+                        name="bankCountry"
+                        required>
+
+                        <option value="">
+                            Select country
+                        </option>
+
+                        <option value="United Arab Emirates">
+                            United Arab Emirates
+                        </option>
+
+                        <option value="India">
+                            India
+                        </option>
+
+                        <option value="Saudi Arabia">
+                            Saudi Arabia
+                        </option>
+
+                        <option value="United Kingdom">
+                            United Kingdom
+                        </option>
+
+                        <option value="United States">
+                            United States
+                        </option>
+
+                        <option value="Other">
+                            Other
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <!-- ACCOUNT NUMBER -->
+
+                <div class="field">
+
+                    <label for="accountNumber">
+
+                        Account Number
+
+                    </label>
+
+                    <input
+                        type="text"
+                        id="accountNumber"
+                        name="accountNumber"
+                        placeholder="Enter account number"
+                        maxlength="50">
+
+                </div>
+
+
+                <!-- IBAN -->
+
+                <div class="field">
+
+                    <label for="iban">
+
+                        IBAN
+
+                    </label>
+
+                    <input
+                        type="text"
+                        id="iban"
+                        name="iban"
+                        placeholder="Enter IBAN"
+                        maxlength="50">
+
+                </div>
+
+
+            </div>
+
+
+            <!-- MESSAGE -->
+
+            <div
+                id="beneficiaryMessage"
+                class="form-message">
+            </div>
+
+
+            <!-- BUTTONS -->
+
+            <div class="form-actions">
+
+                <button
+                    type="reset"
+                    class="secondary-btn">
+
+                    Clear
+
+                </button>
+
+
+                <button
+                    type="submit"
+                    id="addBeneficiaryButton"
+                    class="primary-btn">
+
+                    Add Beneficiary
+
+                </button>
+
+            </div>
+
+
+        </form>
+
+    </section>
+
+
+    <!-- =================================================
+         BENEFICIARY LIST
+    ================================================== -->
+
+    <section class="card beneficiary-list-card">
+
+
+        <div class="card-header">
+
+            <div>
+
+                <h2>
+                    My Beneficiaries
+                </h2>
+
+                <p>
+                    View and manage your saved beneficiaries
+                </p>
+
+            </div>
+
+
+            <button
+                id="refreshBeneficiaries"
+                class="secondary-btn">
+
+                ↻ Refresh
+
+            </button>
+
+        </div>
+
+
+        <!-- TABLE -->
+
+        <div class="table-container">
+
+            <table
+                id="beneficiaryTableData">
+
+                <thead>
+
+                    <tr>
+
+                        <th>
+                            Beneficiary Name
+                        </th>
+
+                        <th>
+                            Nickname
+                        </th>
+
+                        <th>
+                            Bank
+                        </th>
+
+                        <th>
+                            Country
+                        </th>
+
+                        <th>
+                            Account Number
+                        </th>
+
+                        <th>
+                            Status
+                        </th>
+
+                        <th>
+                            Actions
+                        </th>
+
+                    </tr>
+
+                </thead>
+
+
+                <tbody
+                    id="beneficiaryTable">
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+
+        <!-- EMPTY MESSAGE -->
+
+        <div
+            id="emptyBeneficiaryMessage"
+            class="empty-message"
+            style="display:none;">
+
+            No beneficiaries found.
+
+        </div>
+
+
+    </section>
+
+
+</main>
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer class="footer">
+
+    <div>
+
+        © Jasima Bank 2026.
+        All rights reserved.
+
+    </div>
+
+
+    <div class="footer-links">
+
+        <span>
+            Security
+        </span>
+
+        <span>
+            |
+        </span>
+
+        <span>
+            Privacy Policy
+        </span>
+
+        <span>
+            |
+        </span>
+
+        <span>
+            Service Terms
+        </span>
+
+    </div>
+
+</footer>
+
+
+<!-- =====================================================
+     JAVASCRIPT
+===================================================== -->
+
+<script src="./js/beneficiary.js"></script>
+
+
+<script>
+
+    // =================================================
+    // DISPLAY LOGGED-IN USER
+    // =================================================
+
+    const user =
+        JSON.parse(
+            localStorage.getItem("user")
+        );
+
+
+    if (user) {
+
+        const welcomeUser =
+            document.getElementById(
+                "welcomeUser"
+            );
+
+        welcomeUser.textContent =
+            `Welcome, ${user.fullName || user.username}`;
+
+    }
+
+
+    // =================================================
+    // LOGOUT
+    // =================================================
+
+    document
+        .getElementById("logoutButton")
+        .addEventListener(
+            "click",
+            function () {
+
+                localStorage.removeItem("user");
+
+                window.location.href =
+                    "login.html";
+
+            }
+        );
+
+
+    // =================================================
+    // BACK TO DASHBOARD
+    // =================================================
+
+    document
+        .getElementById("backDashboard")
+        .addEventListener(
+            "click",
+            function () {
+
+                window.location.href =
+                    "Dashboard.html";
+
+            }
+        );
+
+
+    // =================================================
+    // REFRESH
+    // =================================================
+
+    document
+        .getElementById(
+            "refreshBeneficiaries"
+        )
+        .addEventListener(
+            "click",
+            function () {
+
+                if (
+                    typeof loadBeneficiaries ===
+                    "function"
+                ) {
+
+                    loadBeneficiaries();
+
+                }
+
+            }
+        );
+
+</script>
+
+
+</body>
+
+</html>
